@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linganagouda A M · AI/ML Engineer & Full Stack Developer</title>
+<meta name="description" content="Portfolio of Linganagouda A M: Java full stack developer building toward AI/ML engineering with Azure OpenAI and Python.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04060d; --navy:#0a1128; --ink:#e9edf8; --mute:#8b95b3;
+  --cyan:#4de1ff; --violet:#8b7cff; --line:rgba(140,160,255,.16);
+  --glass:rgba(16,24,52,.5);
+  --display:'Unbounded','Trebuchet MS',sans-serif; --body:'Manrope','Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 700px at 80% -10%,#141c4a 0,transparent 60%),radial-gradient(900px 600px at -10% 40%,#0c1a3a 0,transparent 60%),var(--bg);
+  color:var(--ink);font:400 1.02rem/1.7 var(--body);overflow-x:hidden;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;opacity:.35;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 75%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+
+/* floating shapes */
+.orb{position:fixed;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.42;pointer-events:none;animation:drift 22s ease-in-out infinite alternate}
+.o1{width:420px;height:420px;background:radial-gradient(circle,var(--violet),transparent 70%);top:8%;right:-120px}
+.o2{width:360px;height:360px;background:radial-gradient(circle,var(--cyan),transparent 70%);bottom:5%;left:-130px;animation-duration:28s;opacity:.28}
+.shape{position:absolute;border:1px solid rgba(139,124,255,.35);border-radius:28%;animation:spin 40s linear infinite;pointer-events:none}
+@keyframes drift{to{transform:translate(-60px,80px) scale(1.15)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* nav */
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:.25rem;padding:.4rem;
+  background:rgba(8,13,32,.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:999px;
+  max-width:calc(100% - 24px);overflow-x:auto;scrollbar-width:none}
+nav a{padding:.45rem 1rem;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--mute);white-space:nowrap;transition:.25s}
+nav a:hover{color:var(--ink);background:rgba(139,124,255,.16)}
+
+section,header{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding-top:120px}
+h2{font:800 clamp(2.2rem,5.5vw,3.8rem)/1.05 var(--display);letter-spacing:-.03em;margin-bottom:2.5rem}
+h2 span{background:linear-gradient(100deg,var(--ink) 30%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* hero */
+header{min-height:100vh;display:grid;grid-template-columns:1.25fr .85fr;gap:3rem;align-items:center;padding-top:100px;position:relative}
+.hero-copy>*{opacity:0;transform:translateY(24px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+.hero-copy>*:nth-child(2){animation-delay:.12s}.hero-copy>*:nth-child(3){animation-delay:.24s}.hero-copy>*:nth-child(4){animation-delay:.36s}
+@keyframes rise{to{opacity:1;transform:none}}
+.status{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--glass);font-size:.88rem;color:var(--mute);margin-bottom:1.6rem}
+.status i{width:8px;height:8px;border-radius:50%;background:#4dffb0;box-shadow:0 0 12px #4dffb0}
+h1{font:800 clamp(2.8rem,7.4vw,5.8rem)/.98 var(--display);letter-spacing:-.045em}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--cyan),var(--violet) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:34rem;color:var(--mute);font-size:1.12rem;margin:1.6rem 0 2.2rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{padding:.85rem 1.5rem;border-radius:14px;font-weight:600;border:1px solid var(--line);background:var(--glass);transition:.3s}
+.btn.main{background:linear-gradient(120deg,var(--violet),#5d6bff);border-color:transparent;box-shadow:0 8px 30px -6px rgba(139,124,255,.6)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 34px -8px rgba(77,225,255,.5)}
+
+/* hero flow card */
+.flow{position:relative;padding:1.6rem;opacity:0;animation:rise 1s .5s cubic-bezier(.2,.8,.2,1) forwards}
+.flow .shape{width:120px;height:120px;top:-46px;right:-30px}
+.flow h3{font:700 .95rem var(--display);margin-bottom:1.2rem;color:var(--mute)}
+.node{display:flex;align-items:center;gap:.9rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:14px;background:rgba(6,10,26,.6);position:relative}
+.node+.node{margin-top:1.4rem}
+.node+.node::before{content:"";position:absolute;left:1.55rem;top:-1.4rem;height:1.4rem;width:1px;background:linear-gradient(var(--violet),var(--cyan));}
+.node+.node::after{content:"";position:absolute;left:calc(1.55rem - 3px);top:-1.4rem;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:pulse 2.4s ease-in-out infinite}
+.node:nth-child(3)::after{animation-delay:.6s}.node:nth-child(4)::after{animation-delay:1.2s}
+@keyframes pulse{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(1.2rem);opacity:.2}}
+.node b{font-weight:600;display:block;line-height:1.3}.node small{color:var(--mute);font-size:.82rem}
+.ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font:700 .8rem var(--display);background:linear-gradient(135deg,rgba(139,124,255,.3),rgba(77,225,255,.18));border:1px solid var(--line);flex:none}
+
+/* glass cards */
+.card{position:relative;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:24px;border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 20px 60px -30px #000;transition:border-color .35s,box-shadow .35s}
+.card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),var(--cyan),var(--violet) 45%,transparent 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover::before{opacity:.9}
+.card:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 60px -30px #000,0 0 40px -12px rgba(139,124,255,.4)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:1.4rem}
+.about .card{padding:2rem}
+.about p{color:#c3cbe3;max-width:60ch}
+.facts{display:grid;gap:1.1rem;align-content:center}
+.facts div b{font:700 1.5rem var(--display);letter-spacing:-.02em;display:block}
+.facts div span{color:var(--mute);font-size:.9rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.skills .card{padding:1.6rem}
+.skills h3{font:700 1.02rem var(--display);margin-bottom:1rem}
+.skills .wide{grid-column:span 2}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{padding:.32rem .8rem;border-radius:999px;font-size:.86rem;background:rgba(139,124,255,.1);border:1px solid rgba(139,124,255,.22);color:#d3d9f2;transition:.25s}
+.chips span:hover{border-color:var(--cyan);color:#fff;box-shadow:0 0 14px -2px rgba(77,225,255,.5)}
+.chips .grow{border-style:dashed;background:transparent}
+.skills .full{grid-column:1/-1}
+.note{color:var(--mute);font-size:.86rem;margin-top:1rem;line-height:1.5}
+.legend{margin-top:1.2rem;color:var(--mute);font-size:.86rem;display:flex;align-items:center;flex-wrap:wrap;gap:.4rem}
+.chips .hot{background:rgba(77,225,255,.1);border-color:rgba(77,225,255,.4)}
+
+/* timeline */
+.tl{position:relative;padding-left:2rem;display:grid;gap:1.4rem}
+.tl::before{content:"";position:absolute;left:6px;top:14px;bottom:14px;width:1px;background:linear-gradient(var(--cyan),var(--violet),transparent)}
+.tl .card{padding:1.8rem}
+.tl .card::after{content:"";position:absolute;left:-2rem;top:2.05rem;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.role{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+.role h3{font:700 1.2rem var(--display);letter-spacing:-.02em}
+.role time{color:var(--cyan);font-size:.92rem;font-weight:600}
+.org{color:var(--mute);margin:.2rem 0 1rem}
+ul.pts{list-style:none;display:grid;gap:.6rem}
+ul.pts li{padding-left:1.3rem;position:relative;color:#c3cbe3}
+ul.pts li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:2px;background:var(--violet);box-shadow:0 0 8px var(--violet)}
+
+/* projects */
+.proj{display:grid;gap:1.4rem}
+.proj .card{padding:2.2rem;display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;overflow:hidden}
+.proj h3{font:800 clamp(1.5rem,3vw,2.1rem)/1.1 var(--display);letter-spacing:-.035em;margin-bottom:.6rem}
+.proj .sub{color:var(--mute);margin-bottom:1.2rem}
+.proj .chips{margin-top:1.3rem}
+.proj .tag{display:inline-block;margin-bottom:1rem;color:var(--cyan);font-weight:600;font-size:.9rem}
+.proj a.link{display:inline-block;margin-top:1.3rem;font-weight:600;color:var(--cyan);border-bottom:1px solid rgba(77,225,255,.4)}
+
+/* education */
+.edu{display:grid;grid-template-columns:1.3fr 1fr;gap:1.2rem}
+.edu .card{padding:1.8rem}
+.edu h3{font:700 1.05rem var(--display);margin-bottom:1rem}
+.big{font:800 clamp(2.4rem,5vw,3.4rem)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(100deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.edu .row{padding:.75rem 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;color:#c3cbe3;font-size:.95rem}
+.edu .row span:last-child{color:var(--mute);white-space:nowrap}
+
+/* contact */
+.contact{text-align:center;padding-bottom:70px}
+.contact .card{padding:clamp(2rem,6vw,4.5rem) 1.5rem;overflow:hidden}
+.contact h2{margin-bottom:1rem}
+.contact p{color:var(--mute);max-width:32rem;margin:0 auto 2rem}
+.contact .btns{justify-content:center}
+footer{text-align:center;color:var(--mute);font-size:.86rem;padding:0 24px 36px}
+
+/* scroll reveal: only the main blocks, once */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .skills .full{grid-column:span 2}
+  header{grid-template-columns:1fr;padding-top:110px}
+  .about,.edu,.proj .card{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}.skills .wide{grid-column:span 2}
+  section{padding-top:90px}
+}
+@media(max-width:560px){.skills{grid-template-columns:1fr}.skills .wide,.skills .full{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero-copy>*,.flow,.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+
+<nav aria-label="Primary">
+  <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <div class="hero-copy">
+    <div class="status"><i></i>Open to AI/ML and full stack roles · Bengaluru</div>
+    <h1>Linganagouda <em>A M</em></h1>
+    <p class="lead">AI/ML engineer in the making with a full stack backbone. I ship Java and Spring Boot systems end to end, and I'm applying Azure OpenAI and Python to real products.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">View my projects</a>
+      <a class="btn" href="Linganagoudaam_Resume.pdf" download>Download resume</a>
+      <a class="btn" href="https://github.com/Linganagouda33" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.instagram.com/lingana_gouda_03/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <aside class="card flow" aria-label="How I work across the stack">
+    <div class="shape"></div>
+    <h3>From data to decision</h3>
+    <div class="node"><span class="ico">UI</span><div><b>React, JavaScript, Bootstrap</b><small>Interfaces people enjoy using</small></div></div>
+    <div class="node"><span class="ico">API</span><div><b>Spring Boot, REST, Hibernate</b><small>Services with clean structure</small></div></div>
+    <div class="node"><span class="ico">AI</span><div><b>Azure OpenAI, Python</b><small>Prompts and models in production apps</small></div></div>
+    <div class="node"><span class="ico">DB</span><div><b>MySQL, Oracle SQL</b><small>Well-modeled, reliable data</small></div></div>
+  </aside>
+</header>
+
+<section id="about" class="rv">
+  <h2><span>Backend depth,</span><br>AI curiosity.</h2>
+  <div class="about">
+    <div class="card">
+      <p>I'm a full stack developer with a Python and Java foundation. I've designed and shipped complete systems with Spring Boot, Hibernate, MySQL and REST APIs, and I'm equally comfortable with data handling, API integration and application logic.</p>
+      <p style="margin-top:1rem">Hands-on training in Azure AI, Azure OpenAI and prompt engineering has pushed me toward machine learning, and I pick up new ML frameworks quickly to apply AI to real-world problems.</p>
+    </div>
+    <div class="card facts">
+      <div><b>8.23</b><span>CGPA in B.E. Computer Science &amp; Engineering</span></div>
+      <div><b>2 shipped projects</b><span>Booking platform and weather app</span></div>
+      <div><b>Azure OpenAI</b><span>Trained through Infosys Foundation</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="rv">
+  <h2>The toolkit.</h2>
+  <div class="skills">
+    <div class="card wide"><h3>AI/ML core</h3><div class="chips"><span class="hot">Azure AI</span><span class="hot">Azure OpenAI</span><span class="hot">Prompt engineering</span><span class="hot">Generative AI</span><span>LLM API integration</span><span>ML/AI fundamentals</span><span>Supervised and unsupervised learning</span><span>Model evaluation</span></div></div>
+    <div class="card"><h3>Programming languages</h3><div class="chips"><span class="hot">Python</span><span>Java</span><span>SQL</span><span>JavaScript</span></div><p class="note">Python for ML and data work, Java for production backends.</p></div>
+    <div class="card"><h3>Data science stack</h3><div class="chips"><span class="grow">NumPy</span><span class="grow">Pandas</span><span class="grow">Scikit-learn</span><span class="grow">Matplotlib</span><span class="grow">Jupyter</span></div></div>
+    <div class="card wide"><h3>Deep learning and GenAI</h3><div class="chips"><span class="grow">TensorFlow</span><span class="grow">PyTorch</span><span class="grow">Hugging Face</span><span class="grow">LangChain</span><span class="grow">RAG pipelines</span><span class="grow">NLP basics</span><span class="grow">Vector databases</span></div></div>
+    <div class="card wide"><h3>Deploying AI</h3><div class="chips"><span class="grow">FastAPI</span><span class="grow">Flask</span><span class="grow">Docker</span><span>REST APIs</span><span>Microservices</span><span>Azure</span><span>Git and GitHub</span></div></div>
+    <div class="card"><h3>Data</h3><div class="chips"><span>MySQL</span><span>Oracle SQL</span><span>Data modeling</span><span>CRUD workflows</span></div></div>
+    <div class="card wide"><h3>Backend and APIs</h3><div class="chips"><span>Spring Boot</span><span>Spring MVC</span><span>Hibernate</span><span>JDBC</span><span>REST APIs</span><span>Servlets</span><span>JSP</span><span>Microservices</span></div></div>
+    <div class="card"><h3>Frontend</h3><div class="chips"><span>ReactJS</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Bootstrap</span></div></div>
+    <div class="card full"><h3>Tools and practices</h3><div class="chips"><span>Git</span><span>GitHub</span><span>Maven</span><span>Postman</span><span>Eclipse IDE</span><span>OOP</span><span>Collections Framework</span><span>Exception handling</span></div></div>
+  </div>
+  <p class="legend"><span class="chips"><span class="hot">Cyan</span></span> core strengths &nbsp; <span class="chips"><span class="grow">Dashed</span></span> actively building experience</p>
+</section>
+
+<section id="experience" class="rv">
+  <h2>Where I've<br>been learning.</h2>
+  <div class="tl">
+    <article class="card">
+      <div class="role"><h3>Java Full Stack Trainee</h3><time>Feb 2026 – Present</time></div>
+      <p class="org">JSpiders</p>
+      <ul class="pts">
+        <li>Built Java web applications with Core Java, JDBC, Hibernate and MySQL, applying MVC architecture across Servlets and JSP.</li>
+        <li>Implemented end-to-end CRUD workflows and fixed defects through systematic debugging, exception handling and root-cause analysis.</li>
+        <li>Used Git and GitHub for version control, Postman for API testing and Maven for builds across the development lifecycle.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <div class="role"><h3>AI Workshop Participant</h3><time>Sep 2025</time></div>
+      <p class="org">Infosys Foundation</p>
+      <ul class="pts">
+        <li>Completed hands-on training in Azure AI, Azure OpenAI and prompt engineering, applied to practical use cases.</li>
+        <li>Gained working exposure to generative AI and how AI/ML services fit into production-style applications.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="projects" class="rv">
+  <h2>Things I've<br>built.</h2>
+  <div class="proj">
+    <article class="card">
+      <div>
+        <span class="tag">Full stack · Personal project</span>
+        <h3>Movie Ticket Booking System</h3>
+        <p class="sub">A complete booking platform with secure payments, verified sign-ups and scannable tickets.</p>
+        <div class="chips"><span>Spring Boot</span><span>Spring MVC</span><span>Hibernate</span><span>MySQL</span><span>Bootstrap</span><span>Razorpay</span><span>Cloudinary</span></div>
+      </div>
+      <ul class="pts">
+        <li>Built the backend with Spring Boot, Spring MVC, Hibernate and MySQL, and the frontend with HTML, CSS and Bootstrap.</li>
+        <li>Integrated Razorpay payments, Cloudinary image uploads and JavaMailSender OTP verification, with rule-based logic securing the booking flow.</li>
+        <li>Generated QR-code tickets and added role-based authentication to separate admin and customer access.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <div>
+        <span class="tag">Frontend · Personal project</span>
+        <h3>Weather Forecaster</h3>
+        <p class="sub">A responsive app that shows live conditions for any city without reloading the page.</p>
+        <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>OpenWeatherMap API</span></div>
+      </div>
+      <ul class="pts">
+        <li>Consumed the OpenWeatherMap REST API to process and display real-time weather data.</li>
+        <li>Designed a clean, mobile-friendly interface that surfaces live data instantly.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="education" class="rv">
+  <h2>Education and<br>certifications.</h2>
+  <div class="edu">
+    <div class="card">
+      <h3>Education</h3>
+      <div class="big">8.23 CGPA</div>
+      <p style="color:#c3cbe3;margin:.5rem 0 1.2rem">B.E., Computer Science &amp; Engineering<br><span style="color:var(--mute)">Proudhadevaraya Institute of Technology · May 2026</span></p>
+      <div class="row"><span>PUC · Brunda PU College, Bellary<br>68.5%</span><span>Apr 2022</span></div>
+      <div class="row"><span>SSLC · Morarji Desai Residential School, Siruguppa<br>86.56%</span><span>Jun 2020</span></div>
+    </div>
+    <div class="card">
+      <h3>Certifications</h3>
+      <ul class="pts">
+        <li><b>Java Full Stack Development</b><br><span style="color:var(--mute)">JSpiders</span></li>
+        <li><b>AI Workshop</b><br><span style="color:var(--mute)">Azure AI, Azure OpenAI, prompt engineering · Infosys Foundation</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact rv">
+  <div class="card">
+    <div class="shape" style="width:220px;height:220px;left:-70px;top:-70px"></div>
+    <div class="shape" style="width:160px;height:160px;right:-40px;bottom:-50px;animation-direction:reverse"></div>
+    <h2>Let's build something<br>intelligent.</h2>
+    <p>I'm looking for AI/ML and full stack opportunities. Send a message and I'll reply quickly.</p>
+    <div class="btns">
+      <a class="btn main" href="mailto:linganagoudaam@gmail.com">Email me</a>
+      <a class="btn" href="https://github.com/Linganagouda33" target="_blank" rel="noopener">github.com/Linganagouda33</a>
+      <a class="btn" href="https://www.instagram.com/lingana_gouda_03/" target="_blank" rel="noopener">@lingana_gouda_03 on Instagram</a>
+      <a class="btn" href="tel:+916360325364">+91 63603 25364</a>
+    </div>
+  </div>
+</section>
+<footer>© 2026 Linganagouda A M · Bengaluru, Karnataka</footer>
+
+<script>
+// cursor-follow glow on card borders
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('pointermove',e=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+// reveal each section once
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
